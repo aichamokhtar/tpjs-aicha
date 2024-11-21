@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul de l'Aire d'un Cercle</title>
+</head>
+<body>
+    <h1>Calcul de l'Aire d'un Cercle</h1>
+    <p>Entrez le rayon du cercle pour calculer son aire :</p>
+
+    <!-- Champ de saisie et bouton -->
+    <input type="number" id="radius" placeholder="Exemple : 5" min="0">
+    <button onclick="calculateArea()">Calculer l'aire</button>
+
+    <p id="result"></p>
+
+    <script>
+        // Fonction pour calculer l'aire d'un cercle
+        function calculateArea() {
+            const radius = parseFloat(document.getElementById("radius").value); // Récupérer le rayon saisi
+
+            // Vérifier si le rayon est valide
+            if (isNaN(radius) || radius <= 0) {
+                alert("Veuillez entrer un rayon valide (un nombre positif).");
+                return;
+            }
+
+            // Calculer l'aire : π × rayon²
+            const area = Math.PI * Math.pow(radius, 2);
+
+            // Afficher le résultat
+            document.getElementById("result").textContent ="L'aire du cercle avec un rayon de ${radius} est : ${area.toFixed(2)} unités carrées. ";
+        }
+    </script>
+</body>
+</html>

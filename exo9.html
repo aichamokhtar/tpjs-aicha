@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation de Formulaire</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Validation de Formulaire</h1>
+    <p>Remplissez les champs ci-dessous et cliquez sur "Envoyer" :</p>
+
+    <form id="myForm" onsubmit="return validateForm()">
+        <!-- Champ pour le nom -->
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name">
+        <span id="nameError" class="error"></span>
+        <br><br>
+
+        <!-- Champ pour l'email -->
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email">
+        <span id="emailError" class="error"></span>
+        <br><br>
+
+        <!-- Bouton de soumission -->
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            // Récupérer les valeurs des champs
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+
+            // Réinitialiser les messages d'erreur
+            document.getElementById("nameError").textContent = "";
+            document.getElementById("emailError").textContent = "";
+
+            let isValid = true;
+
+            // Vérifier si le champ "nom" est vide
+            if (name === "") {
+                document.getElementById("nameError").textContent = "Veuillez entrer votre nom.";
+                isValid = false;
+            }
+
+            // Vérifier si le champ "email" est vide
+            if (email === "") {
+                document.getElementById("emailError").textContent = "Veuillez entrer votre email.";
+                isValid = false;
+            }
+
+            // Si un champ est vide, empêcher la soumission
+            return isValid;
+        }
+    </script>
+</body>
+</html>

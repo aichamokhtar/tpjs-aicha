@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableaux - Jours de la semaine</title>
+</head>
+<body>
+    <h1>Jours de la Semaine</h1>
+    <p>Entrez un numéro entre 1 et 7 pour afficher le jour correspondant :</p>
+
+    <!-- Champ de saisie et bouton -->
+    <input type="number" id="dayNumber" placeholder="Exemple : 3" min="1" max="7">
+    <button onclick="showDay()">Afficher le jour</button>
+
+    <script>
+        function showDay() {
+            // Tableau contenant les jours de la semaine
+            const days = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+
+            // Récupérer la valeur saisie par l'utilisateur
+            const dayNumber = parseInt(document.getElementById("dayNumber").value);
+
+            // Vérifier si le numéro est valide
+            if (isNaN(dayNumber) || dayNumber < 1 || dayNumber > 7) {
+                alert("Veuillez entrer un numéro valide entre 1 et 7.");
+                return;
+            }
+
+            // Afficher le jour correspondant
+            const day = days[dayNumber - 1]; // -1 car les tableaux commencent à 0
+            alert("Le jour correspondant est  : ${day}");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changer la Couleur de Fond</title>
+</head>
+<body>
+    <h1>Changer la Couleur de Fond</h1>
+    <p>Cliquez sur un bouton pour changer la couleur de fond de la page :</p>
+
+    <!-- Boutons pour changer la couleur -->
+    <button onclick="changeBackgroundColor('lightblue')">Bleu Clair</button>
+    <button onclick="changeBackgroundColor('lightgreen')">Vert Clair</button>
+    <button onclick="changeBackgroundColor('lightcoral')">Rouge Clair</button>
+    <button onclick="changeBackgroundColor('white')">Réinitialiser</button>
+
+    <script>
+        // Fonction pour changer la couleur de fond
+        function changeBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>
